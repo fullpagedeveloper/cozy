@@ -107,35 +107,37 @@ class _DetailPageState extends State<DetailPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  widget.space.name,
-                                  style: blackTextStyle.copyWith(
-                                    fontSize: 22,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 2,
-                                ),
-                                Text.rich(
-                                  TextSpan(
-                                    text: '\$${widget.space.price}',
-                                    style: purpleTextStyle.copyWith(
-                                      fontSize: 16,
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    widget.space.name,
+                                    style: blackTextStyle.copyWith(
+                                      fontSize: 22,
                                     ),
-                                    children: [
-                                      TextSpan(
-                                        text: 'month',
-                                        style: grayTextStyle.copyWith(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                    ],
                                   ),
-                                ),
-                              ],
+                                  SizedBox(
+                                    height: 2,
+                                  ),
+                                  Text.rich(
+                                    TextSpan(
+                                      text: '\$${widget.space.price}',
+                                      style: purpleTextStyle.copyWith(
+                                        fontSize: 16,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: 'month',
+                                          style: grayTextStyle.copyWith(
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             Row(
                               children: [1, 2, 3, 4, 5].map(
