@@ -1,15 +1,19 @@
-import 'package:cozy/models/space.dart';
+import 'package:cozy/models/tips.dart';
 import 'package:cozy/theme.dart';
 import 'package:flutter/material.dart';
 
 class TipsCard extends StatelessWidget {
+  final Tips tips;
+
+  TipsCard(this.tips);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Row(
         children: [
           Image.asset(
-            'assets/tips1.png',
+            tips.imgUrl,
             width: 80,
           ),
           SizedBox(
@@ -19,7 +23,7 @@ class TipsCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'City Guidlines',
+                tips.title,
                 style: blackTextStyle.copyWith(
                   fontSize: 18,
                 ),
@@ -28,7 +32,7 @@ class TipsCard extends StatelessWidget {
                 height: 4,
               ),
               Text(
-                'Update 20 Apr',
+                "Updated ${tips.updatedAt}",
                 style: grayTextStyle,
               ),
             ],
